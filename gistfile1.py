@@ -16,17 +16,18 @@ Running the script should result in a post being made...
 
 
 import reddit
-from configparser import ConfigParser
+from ConfigParser import ConfigParser
 from datetime import datetime
 
-config = ConfigParser.read('config.txt')
+config = ConfigParser()
+config.read('config.txt')
 
-username = config['user']['username']
-password = config['user']['password']
-user_agent = config['client']['user_agent']
+username = config.get('user', 'username')
+password = config.get('user','password')
+user_agent = config.get('client','user_agent')
 
 r = reddit.Reddit(user_agent=user_agent)
-r.login('username', 'password')
+r.login(username, password)
 
 BODY_TEXT = '''
 WAYWT = What Are You Wearing Today. It doesn't necessarily need to be what you were wearing TODAY.
@@ -72,4 +73,4 @@ def generate_title():
  ending = get_ending(day)
  return "WAYWT - %(month)s %(day)s%(ending)s" % locals() 
   
-r.submit(config['reddit']['subreddit'], generate_title(), BODY_TEXT)
+r.submit(config.get('reddit','subreddit'), generate_title(), BODY_TEXT)
