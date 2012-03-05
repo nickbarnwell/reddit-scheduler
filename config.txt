@@ -1,0 +1,10 @@
+[user]
+username: 
+password: 
+
+[reddit]
+subreddit: malefashionadvice
+
+[client]
+user_agent: mfa-bot
+
