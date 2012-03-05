@@ -1,8 +1,31 @@
+'''
+Create a file called config.txt in the same directory as the script like so:
+    
+    [user]
+    username: #name
+    password: #password
+
+    [reddit]
+    subreddit: #subreddit
+
+    [client]
+    user_agent: #bot user agent
+
+Running the script should result in a post being made...
+'''
+
+
 import reddit
+from configparser import ConfigParser
 from datetime import datetime
 
-r = reddit.Reddit(user_agent='MFA Moderator Bot')
+config = ConfigParser.read('config.txt')
 
+username = config['user']['username']
+password = config['user']['password']
+user_agent = config['client']['user_agent']
+
+r = reddit.Reddit(user_agent=user_agent)
 r.login('username', 'password')
 
 BODY_TEXT = '''
@@ -49,4 +72,4 @@ def generate_title():
  ending = get_ending(day)
  return "WAYWT - %(month)s %(day)s%(ending)s" % locals() 
   
-r.submit('malefashionadvice', generate_title(), BODY_TEXT)
+r.submit(config['reddit']['subreddit'], generate_title(), BODY_TEXT)
