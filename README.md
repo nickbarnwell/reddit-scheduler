@@ -19,4 +19,6 @@ Usage
     [client]
     user_agent: #bot user agent
 
-Running the script should result in a post being made...
+3. If desired, add the script to your crontab file
+
+4. Run the script and a post should appear per the info supplied in the configuration file
