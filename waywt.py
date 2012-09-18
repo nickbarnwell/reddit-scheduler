@@ -1,4 +1,5 @@
 import reddit
+import json
 from ConfigParser import ConfigParser
 from datetime import datetime
 
@@ -9,17 +10,10 @@ username = config.get('user', 'username')
 password = config.get('user','password')
 user_agent = config.get('client','user_agent')
 
+posts = json.loads(open('postings.json','r').read())
+
 r = reddit.Reddit(user_agent=user_agent)
 r.login(username, password)
-
-BODY_TEXT = '''
-WAYWT = What Are You Wearing Today. It doesn't necessarily need to be what you were wearing TODAY.
-
-* Include what the attire is for (work, school, home)
-* Pictures are incredibly encouraged as it's quite tough to imagine what someone else is wearing without them.
-* **Critiquing others is welcome and encouraged, but keep it constructive/factual.** Take a lesson from Dale Carnegie's [How to Win Friends and Influence People](http://en.wikipedia.org/wiki/How_to_Win_Friends_and_Influence_People) if needed. It takes balls to post pictures of yourself on the Internet, the least you can do is accord the same courtesy as you would to someone in real life.
-* [Reddit Enhancement Suite](http://reddit.honestbleeps.com/) makes it very easy to view pictures in a thread.
-'''
 
 MONTHS = {
   1:  'Jan.',
@@ -49,11 +43,20 @@ def get_ending(day):
   else:
     return 'th'
 
-def generate_title():
+def generate_title(title):
  now = datetime.now()
  month = MONTHS[now.month]
  day = now.day
  ending = get_ending(day)
- return "WAYWT - %(month)s %(day)s%(ending)s" % locals() 
-  
-r.submit(config.get('reddit','subreddit'), generate_title(), BODY_TEXT)
+ return "%(title)s - %(month)s %(day)s%(ending)s" % locals() 
+
+if __name__ == '__main__':
+  weekday = datetime.now().weekday()
+  for post in posts:
+    if weekday in post['day']:
+      title = post['title']
+      with open('bodies/%s.txt' % title) as f:
+        r.submit(config.get('reddit','subreddit'),
+                 generate_title(title),
+                 f.read()
+                )
