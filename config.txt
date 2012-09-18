@@ -3,7 +3,7 @@ username:
 password: 
 
 [reddit]
-subreddit: malefashionadvice
+subreddit: femalefashionadvice
 
 [client]
 user_agent: mfa-bot

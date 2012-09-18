@@ -1,1 +1,1 @@
-30 9 * * 0,2,4 python path/to/waywt.py
+30 9 * * * python path/to/waywt.py
