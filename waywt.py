@@ -56,7 +56,10 @@ if __name__ == '__main__':
     if weekday in post['day']:
       title = post['title']
       with open('bodies/%s.txt' % title) as f:
-        r.submit(config.get('reddit','subreddit'),
+        print "Posting %s" % (generate_title(title))
+        item = r.submit(config.get('reddit','subreddit'),
                  generate_title(title),
                  f.read()
                 )
+        item.distinguish()
+        item.set_flair(post['flair'], post['class'])

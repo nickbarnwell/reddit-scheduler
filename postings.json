@@ -1,20 +1,30 @@
 [{
     "day": [0],
-    "title": "Recent Purchases Thread"
+    "title": "Recent Purchases Thread",
+    "flair": "[Weekly]",
+    "class": "scheduled"
   },
   {
     "day": [3],
-    "title": "Simple Questions Thread"
+    "title": "Simple Questions Thread",
+    "flair": "[Weekly]",
+    "class": "scheduled"
   },
   {
     "day": [1],
-    "title": "Hair, Makeup, Skincare, and Fragrance Thread"
+    "title": "Hair, Makeup, Skincare, and Fragrance Thread",
+    "flair": "[Weekly]",
+    "class": "scheduled"
   },
   {
-    "day": [0, 2],
-    "title": "WAYWT"
+    "day": [6, 2],
+    "title": "WAYWT",
+    "flair": "[Weekly]",
+    "class": "scheduled"
  },
  {
    "day": [4],
-   "title": "General Discussion"
+   "title": "General Discussion",
+   "flair": "[Discussion]",
+   "class": "discuss"
 }]
