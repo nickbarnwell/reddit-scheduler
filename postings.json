@@ -27,4 +27,11 @@
    "title": "General Discussion",
    "flair": "[Discussion]",
    "class": "discuss"
-}]
+ },
+ {
+   "day": [5],
+   "title": "Should I or Shouldn't I Buy...",
+   "flair": "[Weekly]",
+   "class": "scheduled"
+ }]
+]
