@@ -61,5 +61,5 @@ if __name__ == '__main__':
                  generate_title(title),
                  f.read()
                 )
-        item.distinguish()
+        item.distinguish() #FIXME(nickbarnwell): This should be in config
         item.set_flair(post['flair'], post['class'])
