@@ -1,38 +1,8 @@
 [
   {
-    "day": [0],
-    "title": "Recent Purchases Thread",
-    "flair": "[Weekly]",
-    "class": "scheduled"
-  },
-  {
-    "day": [3],
-    "title": "Simple Questions Thread",
-    "flair": "[Weekly]",
-    "class": "scheduled"
-  },
-  {
-    "day": [1],
-    "title": "Hair, Makeup, Skincare, and Fragrance Thread",
-    "flair": "[Weekly]",
-    "class": "scheduled"
-  },
-  {
-    "day": [6, 2],
-    "title": "WAYWT",
-    "flair": "[Weekly]",
-    "class": "scheduled"
- },
- {
-   "day": [4],
-   "title": "General Discussion",
-   "flair": "[Discussion]",
-   "class": "discuss"
- },
- {
-   "day": [5],
-   "title": "Should I or Shouldn't I Buy...",
-   "flair": "[Weekly]",
-   "class": "scheduled"
- }
+    "day": [0], //Day of week for thread to be posted on
+    "title": "Example Thread", //Must match title of .txt file in `./bodies`
+    "flair": "[Weekly]", //Flair Text to assign
+    "class": "scheduled" //Flair Class to assign
+  }
 ]
