@@ -3,8 +3,8 @@ username:
 password: 
 
 [reddit]
-subreddit: femalefashionadvice
+subreddit: YourSubreddit
 
 [client]
-user_agent: mfa-bot
+user_agent: schedule-bot
 

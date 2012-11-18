@@ -1,6 +1,7 @@
-MFA WAWYT Script
+Reddit Scheduler
 ---
-This script will help to automate WAYWT creation.
+This script will help to automate the posting of scheduled threads for 
+subreddits.
 
 Usage
 ---
@@ -22,3 +23,6 @@ Usage
 3. If desired, add the script to your crontab file
 
 4. Run the script and a post should appear per the info supplied in the configuration file
+
+
+Example configuration info is provided in `postings.json`
